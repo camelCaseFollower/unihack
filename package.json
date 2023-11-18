@@ -28,7 +28,7 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://camelCaseFollower.github.io/UniTies",
+  "homepage": "https://camelCaseFollower.github.io/unihack_project",
   "browserslist": {
     "production": [
       ">0.2%",
