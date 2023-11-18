@@ -56,8 +56,8 @@ export default function Search({ onFilter }: ChildProps) {
                 <option value="UB">Transport</option>
                 <option value="FILS">Social</option>
             </select>
-            <button onClick={() => console.log("click")} className="h-1/2">
-                <img src={SearchLogo} className="h-full p-3 bg-menu select-search" />
+            <button className="h-1/2">
+                <img onClick={() => handleFilterClick} src={SearchLogo} className="h-full p-3 bg-menu select-search" />
             </button>
         </div>
     )
