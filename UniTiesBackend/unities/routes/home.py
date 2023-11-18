@@ -1,6 +1,7 @@
 from flask import jsonify
-from app import app
 
-@app.route('/')
+from unities import app
+
+@app.route('/home')
 def home():
     return jsonify({"message": "Welcome to our application!"}), 200
