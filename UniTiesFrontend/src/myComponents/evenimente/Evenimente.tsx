@@ -72,7 +72,6 @@ export default function Evenimente() {
                 {events.map(event => (
                     <EventThumbnail key={event._id} NAME={event.name} IMAGE={event.imageUrl} FACULTATE={event.organizer} />
                 ))}
-
             </div>
         </div>
     )

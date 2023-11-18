@@ -28,7 +28,8 @@
       "react-app/jest"
     ]
   },
-  "homepage": "https://camelCaseFollower.github.io",
+
+  "homepage": "https://camelCaseFollower.github.io/",
   "browserslist": {
     "production": [
       ">0.2%",
