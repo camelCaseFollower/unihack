@@ -1,10 +1,13 @@
+import Phone from "../imgs/phone.svg"
+import Email from "../imgs/email.svg"
+
 export default function ContactForm(){
     return(
         <div className="flex flex-wrap w-2/3 justify-center">
             <h1 className="text-6xl mb-8 font-bold">Intrebari?</h1>
             <div className=" flex flex-wrap w-full mb-12">
-                <div className="grow m-2 blue-border shadow h-60 bg-white rounded-3xl"></div>
-                <div className="grow m-2 blue-border shadow h-60 bg-white rounded-3xl"></div>
+                <div className="grow m-2 flex justify-center flex-col content-center p-6 blue-border shadow h-60 bg-white rounded-3xl"><img src={Email} className="w-24 h-24"/></div>
+                <div className="grow m-2 flex justify-center flex-col content-center p-6 blue-border shadow h-60 bg-white rounded-3xl"><img src={Phone} className="w-24 h-24"/></div>
             </div>
             <div className="flex w-full mb-14">
             <form className="flex flex-wrap w-full justify-center">

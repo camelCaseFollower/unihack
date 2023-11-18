@@ -9,7 +9,7 @@ export default function Footer(){
     return(
         <div className="flex flex-wrap bg-neutral-700 w-full">
             <div className="flex flex-wrap flex-col p-4 w-1/3 justify-center content-end">
-                <img className="h-28 w-60" src={Logo}></img>
+                <img className="h-36 w-68" src={Logo}></img>
                 <div className="flex flex-wrap justify-center">
                     <img className="h-6 mr-1"src={Copyright}></img>
                     <p className="text-white">Unities CES 2023</p>
