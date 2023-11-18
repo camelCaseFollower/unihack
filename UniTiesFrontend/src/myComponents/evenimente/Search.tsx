@@ -19,10 +19,10 @@ export default function Search({ onFilter }: ChildProps) {
     const [facultate, setFacultate] = useState("");
     const [categorii, setCategorii] = useState("");
 
-    const handleFilterClick = () => {
-        console.log(judet);
-        console.log(facultate);
-        console.log(categorii);
+    function handleFilterClick() {
+        if ((judet === "" && facultate === "" && categorii === "") 
+        || (judet === "Judet" && facultate === "Facultate" && categorii === "Categorii"))
+            return;
         onFilter({
             judetFilter: judet,
             facultateFilter: facultate,
@@ -33,15 +33,15 @@ export default function Search({ onFilter }: ChildProps) {
     return (
         <div className=" items-center justify-center flex w-full h-28 shadow">
             <select onChange={(e) => setJudet(e.target.value)} className="selectL h-1/2 px-40 bg-white">
-                <option value="judet">Judet</option>
+                <option value="Judet">Judet</option>
                 <option value="Bucuresti">Bucuresti</option>
-                <option value="Timisoara">Timisoara</option>
+                <option value="Timis">Timis</option>
                 <option value="Cluj">Cluj</option>
                 <option value="Iasi">Iasi</option>
                 <option value="Brasov">Brasov</option>
             </select>
             <select onChange={(e) => setFacultate(e.target.value)} className="selectM h-1/2 px-40 bg-white">
-                <option value="facultate">Facultate</option>
+                <option value="Facultate">Facultate</option>
                 <option value="UPB">UPB</option>
                 <option value="UPT">UPT</option>
                 <option value="ASE">ASE</option>
@@ -49,15 +49,15 @@ export default function Search({ onFilter }: ChildProps) {
                 <option value="FILS">FILS</option>
             </select>
             <select onChange={(e) => setCategorii(e.target.value)} className="selectR h-1/2 px-40 bg-white">
-                <option value="categorii">Categorii</option>
-                <option value="UPB">Tehnologie</option>
-                <option value="UPT">Agricultura</option>
-                <option value="ASE">Economie</option>
-                <option value="UB">Transport</option>
-                <option value="FILS">Social</option>
+                <option value="Categorie">Categorie</option>
+                <option value="Tehnologie">Tehnologie</option>
+                <option value="Agricultura">Agricultura</option>
+                <option value="Economie">Economie</option>
+                <option value="Transport">Transport</option>
+                <option value="Social">Social</option>
             </select>
             <button className="h-1/2">
-                <img onClick={() => handleFilterClick} src={SearchLogo} className="h-full p-3 bg-menu select-search" />
+                <img onClick={handleFilterClick} src={SearchLogo} className="h-full p-3 bg-menu select-search" />
             </button>
         </div>
     )

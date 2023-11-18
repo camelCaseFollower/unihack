@@ -9,6 +9,7 @@ export interface Event {
     dateEnd: Date;
     organizer: string;
     imageUrl: string;
+    category: string;
   }
   
   export const fetchEvents = async (): Promise<Event[]> => {
