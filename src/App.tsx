@@ -4,6 +4,7 @@ import Menu from "./myComponents/Menu"
 import MainBody from "./myComponents/MainBody"
 import Evenimente from "./myComponents/evenimente/Evenimente"
 import Dashboard from "./myComponents/dashboard/Dashboard"
+import Login from "./myComponents/Login"
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Route index element={<MainBody />} />
       <Route path="evenimente" element={<Evenimente/>} />
       <Route path="dashboard" element={<Dashboard/>} />
+      <Route path="login" element={<Login />} />
   </Routes>
 </>
   );

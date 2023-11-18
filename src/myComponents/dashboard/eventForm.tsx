@@ -2,7 +2,7 @@
 
 export default function EventCreator(){
     return(
-        <div className="flex flex-wrap w-3/4 content-start grow m-6 p-12">
+        <div className="flex flex-wrap w-3/4 content-start grow p-12">
             <h1 className="text-4xl font-bold w-full text-center mb-6">Adauga un eveniment</h1>
             <div className="flex flex-wrap w-full mb-12">{/* Here will be the photos */}
                 <div className="grow ml-3 h-60 bg-black"></div>
