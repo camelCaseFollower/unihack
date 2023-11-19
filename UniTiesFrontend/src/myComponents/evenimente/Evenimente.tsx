@@ -77,7 +77,7 @@ export default function Evenimente() {
     };
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center w-full">
             <Search onFilter={setFilteredEvents} options={options} />
             <div className="flex flex-wrap w-2/3">
                 {events.map((event ) => (

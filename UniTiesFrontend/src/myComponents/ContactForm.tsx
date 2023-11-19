@@ -30,8 +30,8 @@ export default function ContactForm() {
         <div className="flex flex-wrap w-full lg:w-2/3 justify-center">
             <h1 className="text-6xl mb-8 font-bold">Intrebari?</h1>
             <div className=" flex flex-wrap w-full mb-12">
-                <div className="grow m-2 flex justify-center flex-col content-center p-6 blue-border shadow h-30 lg:h-60 bg-white rounded-3xl"><img src={Email} className="w-24 h-24" />contact@unities.ro</div>
-                <div className="grow m-2 flex justify-center flex-col content-center p-6 blue-border shadow h-30 lg:h-60 bg-white rounded-3xl"><img src={Phone} className="w-24 h-24" />+40 0768 344 163</div>
+                <div className="grow m-2 flex flex-row content-center items-center p-6 blue-border shadow h-30 lg:h-60 bg-white rounded-3xl"><img src={Phone} className="w-24 h-24 m-6" /><p className="self-center text-xl lg:text-4xl text-blue font-bold">+40 768 344 163</p></div>
+                <div className="grow m-2 flex flex-row content-center items-center p-6 blue-border shadow h-30 lg:h-60 bg-white rounded-3xl"><img src={Email} className="w-24 h-24 m-6" /><p className="self-center text-xl lg:text-4xl text-blue font-bold">contact@unities.ro</p></div>
             </div>
             <div className="flex w-full mb-14">
                 <form onSubmit={handleSend} className="flex flex-wrap w-full justify-center">
