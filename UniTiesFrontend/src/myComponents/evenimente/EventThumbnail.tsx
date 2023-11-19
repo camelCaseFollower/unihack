@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom"
 
 interface thumbnailProps{
+    key: string,
     NAME: string,
     IMAGE: string,
     FACULTATE: string,
