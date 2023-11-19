@@ -69,7 +69,7 @@ def data_scraper_Bucuresti():
             data_eveniment = data_eveniment_start + "-" + ora_eveniment
 
         my_dict = {
-            "_id": str(uuid.uuid4()),
+            "_id": str(time.time()),
             "name": titlu_eveniment,
             "description": description_text,
             "county": "Cluj",
