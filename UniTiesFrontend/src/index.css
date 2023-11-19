@@ -4,9 +4,17 @@
 
 body{
     background-color:rgb(243, 243, 243);
+    /*font-family: 'Roboto', sans-serif;*/
+    font-family: 'Open Sans', sans-serif
+}
+.bg-whitey{
+    background-color:rgb(243, 243, 243)
 }
 .bg-menu{
     background-color:rgba(0,91,188,255);
+}
+.text-blue{
+    color:rgba(0,91,188,255);
 }
 .menu-button:hover{
     background-color:#003771;
@@ -59,4 +67,8 @@ body{
 /* DASHBOARD BUTTONS*/
 .buttons-blue-hover:hover{
     background-color: rgba(0,91,188,255);
+}
+.EventParagraph{
+    border-top:solid 1.5px rgb(209 213 219);
+    border-bottom:solid 1.5px rgb(209 213 219);
 }

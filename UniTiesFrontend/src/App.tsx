@@ -5,6 +5,8 @@ import MainBody from "./myComponents/MainBody"
 import Evenimente from "./myComponents/evenimente/Evenimente"
 import Dashboard from "./myComponents/dashboard/Dashboard"
 import Login from "./myComponents/Login"
+import PaginaEveniment from "./myComponents/evenimente/paginaEveniment"
+import Footer from "./myComponents/Footer"
 
 function App() {
   return (
@@ -14,8 +16,9 @@ function App() {
       <Route index element={<MainBody />} />
       <Route path="evenimente" element={<Evenimente/>} />
       <Route path="dashboard" element={<Dashboard/>} />
-      <Route path="login" element={<Login />} />
+      <Route path="event" element={<PaginaEveniment />}/>
   </Routes>
+  <Footer />
 </>
   );
 }
