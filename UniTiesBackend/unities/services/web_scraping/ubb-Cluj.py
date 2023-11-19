@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 import uuid.uuid4
 
 
-def data_scraper():
+def data_scraper_Bucuresti():
     # Create a new instance of the Chrome driver
     # Navigate to the main page
     driver = webdriver.Firefox()
