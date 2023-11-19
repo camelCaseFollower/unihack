@@ -3,8 +3,6 @@ export interface Event {
     name: string;
     description: string;
     county: string;
-    open: boolean;
-    accommodation: boolean;
     dateStart: Date;
     dateEnd: Date;
     organizer: string;

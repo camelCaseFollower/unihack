@@ -1,4 +1,4 @@
-import Search, { Filters } from "./Search"
+import Search, { Filters, Options } from "./Search"
 import EventThumbnail from "./EventThumbnail"
 import { useState, useEffect } from "react"
 import { fetchEvents, Event } from "../../services/events";
@@ -6,6 +6,11 @@ import { fetchEvents, Event } from "../../services/events";
 export default function Evenimente() {
     const [events, setEvents] = useState<Event[]>([]);
     const [reload, setReload] = useState<boolean>(false);
+    const [options, setOptions] = useState<Options>({
+        judete: ['-'],
+        categorii: ['-'],
+        facultati: ['-']
+    });
 
     useEffect(() => {
         const fetchData = async () => {
@@ -13,6 +18,12 @@ export default function Evenimente() {
                 const data = await fetchEvents();
                 setEvents(data);
                 localStorage.setItem("initialEvents", JSON.stringify(data));
+                const tmp: Options = {
+                    judete: Array.from(new Set(data.map(e => e.county))),
+                    categorii: Array.from(new Set(data.map(e => e.category))),
+                    facultati: Array.from(new Set(data.map(e => e.organizer)))
+                };
+                setOptions(tmp);
             } catch (error) {
                 console.log("events error");
             }
@@ -67,7 +78,7 @@ export default function Evenimente() {
 
     return (
         <div className="flex flex-wrap justify-center">
-            <Search onFilter={setFilteredEvents} />
+            <Search onFilter={setFilteredEvents} options={options} />
             <div className="flex flex-wrap w-2/3">
                 {events.map(event => (
                     <EventThumbnail key={event._id} NAME={event.name} IMAGE={event.imageUrl} FACULTATE={event.organizer} />
