@@ -23,7 +23,6 @@ def get_events():
             'description': event['description'],
             'county': event['county'],
             'open': event['open'],
-            'accommodation': event['accommodation'],
             'dateStart': event['dateStart'],
             'dateEnd': event['dateEnd'],
             'organizer': event['organizer'],
