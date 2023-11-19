@@ -1,7 +1,7 @@
 export interface Event {
     _id: string;
     name: string;
-    description: number;
+    description: string;
     county: string;
     open: boolean;
     accommodation: boolean;
