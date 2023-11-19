@@ -83,3 +83,6 @@ def data_scraper_Cluj():
     # Close the browser
     driver.quit()
     return events_dict
+
+
+print(data_scraper_Cluj())
