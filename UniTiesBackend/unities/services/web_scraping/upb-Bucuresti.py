@@ -65,7 +65,8 @@ def data_scraper_Bucuresti():
             "date": dates_events[count],  # Assign the value of data_eveniment_start
             "organizer": "Universitatea Babes-Bolyai",
             "imageUrl": image_url,
-            "category": "General"   #Needs generalisation
+            "category": "General",   #Needs generalisation
+            "articleUrl": link
             }
         print(my_dict, "/n")
         events_dict[my_dict["_id"]] = my_dict

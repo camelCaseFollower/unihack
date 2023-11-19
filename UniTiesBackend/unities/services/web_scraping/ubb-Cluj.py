@@ -76,7 +76,8 @@ def data_scraper_Bucuresti():
             "date": data_eveniment,  # Assign the value of data_eveniment_start
             "organizer": "Universitatea Babes-Bolyai",
             "imageUrl": image_url,
-            "category": "General"   #Needs generalisation
+            "category": "General",   #Needs generalisation
+            "articleUrl": link
             }
         events_dict[my_dict["_id"]] = my_dict
 
