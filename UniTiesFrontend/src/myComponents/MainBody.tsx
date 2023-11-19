@@ -47,7 +47,7 @@ export default function MainBody() {
                     </div>}{/*----- here posts div ends -----*/}
                     <div className="flex flex-wrap w-full justify-center my-28">
                         {events.map((e) =>
-                            <Card TITLE={e.name} IMAGE={e.imageUrl} SITE="#" BIO={e.description} />
+                            <Card key={e._id} TITLE={e.name} IMAGE={e.imageUrl} SITE="#" BIO={e.description} />
                         )}
                     </div>
                     <ContactForm />
