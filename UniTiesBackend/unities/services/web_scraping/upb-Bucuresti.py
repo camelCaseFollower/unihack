@@ -61,19 +61,14 @@ def data_scraper_Bucuresti():
             "_id": str(time.time()),
             "name": titlu_eveniment,
             "description": description_text,
-            "county": "Cluj",
-            "date": dates_events[count],  # Assign the value of data_eveniment_start
-            "organizer": "Universitatea Babes-Bolyai",
+            "county": "Bucuresti",
+            "date": dates_events[count],
+            "organizer": "Universitatea Nationala de Stiinta si Tehnologie Politehnica Bucuresti",
             "imageUrl": image_url,
-            "category": "General",   #Needs generalisation
+            "category": "General", #Needs generalisation
             "articleUrl": link
             }
-        print(my_dict, "/n")
         events_dict[my_dict["_id"]] = my_dict
-    
+
     driver.quit()
     return events_dict
-    # Close the browser
-
-data_scraper_Bucuresti()
-
