@@ -23,7 +23,6 @@ def get_events():
             'description': event['description'],
             'county': event['county'],
             'open': event['open'],
-            'accommodation': event['accommodation'],
             'dateStart': event['dateStart'],
             'dateEnd': event['dateEnd'],
             'organizer': event['organizer'],
@@ -90,3 +89,22 @@ def add_questions():
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+    
+@app.route('/event/<event_id>')
+def get_event(event_id):
+    if event_id is None:
+        return "Id is null"
+
+    event = client.unities.events.find_one({"_id": ObjectId(event_id)})
+    event_data = {
+        'name': event['name'],
+        'description': event['description'],
+        'county': event['county'],
+        'accommodation': event['accommodation'],
+        'dateStart': event['dateStart'],
+        'dateEnd': event['dateEnd'],
+        'organizer': event['organizer'],
+        'imageUrl': event['imageUrl'],
+        'category': event['category']
+    }
+    return jsonify({'event': event_data})
