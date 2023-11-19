@@ -1,3 +1,11 @@
 from pymongo import MongoClient
-uri = "mongodb+srv://User:4lNukg1PfxSL8SZj@unistud.mhdzsny.mongodb.net/?retryWrites=true&w=majority"
+
+uri = (
+    "mongodb+srv://User:4lNukg1PfxSL8SZj@"
+    "unistud.mhdzsny.mongodb.net/"
+    "?retryWrites=true&w=majority"
+)
+
 client = MongoClient(uri)
+db = client.unities
+events = db.events

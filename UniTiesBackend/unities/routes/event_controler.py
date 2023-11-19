@@ -1,8 +1,6 @@
 
 from datetime import datetime
-from flask import Flask, request, jsonify
-from flask_cors import CORS
-from pymongo.mongo_client import MongoClient
+from flask import request, jsonify
 
 from unities import app
 from unities.models import client
@@ -45,8 +43,10 @@ def add_event():
     date_start_str = event_data.get('dateStart', '')
     date_end_str = event_data.get('dateEnd', '')
 
-    date_start = datetime.strptime(date_start_str, "%Y-%m-%d").date() if date_start_str else None
-    date_end = datetime.strptime(date_end_str, "%Y-%m-%d").date() if date_end_str else None
+    date_start = datetime.strptime(date_start_str, "%Y-%m-%d").date() \
+        if date_start_str else None
+    date_end = datetime.strptime(date_end_str, "%Y-%m-%d").date() \
+        if date_end_str else None
 
     # Convert datetime.date objects to strings in ISO format
     date_start_iso = date_start.isoformat() if date_start else None
@@ -61,7 +61,30 @@ def add_event():
 
         # Check if the insertion was successful
         if result.inserted_id:
-            return jsonify({'message': 'Event added successfully', 'event_id': str(result.inserted_id)}), 201
+            response_data = {
+                'message': 'Event added successfully',
+                'event_id': str(result.inserted_id)
+            }
+            return jsonify(response_data), 201
+        else:
+            return jsonify({'error': 'Failed to add event'}), 500
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/questions', methods=['POST'])
+def add_questions():
+    question_data = request.get_json()
+    try:
+        result = client.unities.questions.insert_one(question_data)
+
+        if result.inserted_id:
+            response_data = {
+                'message': 'Event added successfully',
+                'event_id': str(result.inserted_id)
+            }
+            return jsonify(response_data), 201
         else:
             return jsonify({'error': 'Failed to add event'}), 500
 

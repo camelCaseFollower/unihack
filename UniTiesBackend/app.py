@@ -1,6 +1,6 @@
-from unities import backend
+from unities import backend  # noqa
+from unities import app
 
-import pdb; pdb.set_trace()
 
 if __name__ == "__main__":
-    backend.app.run(debug=True)
+    app.run(debug=True)
