@@ -3,7 +3,6 @@ import {Link,Route,Routes} from "react-router-dom"
 import Menu from "./myComponents/Menu"
 import MainBody from "./myComponents/MainBody"
 import Evenimente from "./myComponents/evenimente/Evenimente"
-import Login from "./myComponents/Login"
 import PaginaEveniment from "./myComponents/evenimente/paginaEveniment"
 import Footer from "./myComponents/Footer"
 
