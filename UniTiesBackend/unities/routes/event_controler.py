@@ -4,6 +4,9 @@ from flask import request, jsonify
 
 from unities import app
 from unities.models import client
+from unities.services.web_scraping.upbBucuresti import data_scraper_Bucuresti
+from unities.services.web_scraping.ubbCluj import data_scraper_Cluj
+from unities.services.web_scraping.uptTimisoara import data_scraper_Timisoara
 
 
 @app.route('/')
@@ -14,6 +17,13 @@ def get_events():
     except Exception as e:
         print(e)
 
+    today = datetime.today()
+    is_25th = today.day == 25
+    if (is_25th):
+        data_scraper_Bucuresti()
+        data_scraper_Cluj()
+        data_scraper_Timisoara()
+    
     events = client.unities.events.find()
     events_list = []
 

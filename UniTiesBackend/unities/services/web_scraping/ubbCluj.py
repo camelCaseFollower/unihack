@@ -3,10 +3,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 import time
 from bs4 import BeautifulSoup
-import uuid.uuid4
 
 
-def data_scraper_Bucuresti():
+def data_scraper_Cluj():
     # Create a new instance of the Chrome driver
     # Navigate to the main page
     driver = webdriver.Firefox()
