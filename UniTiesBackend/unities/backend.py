@@ -5,4 +5,5 @@ from unities import app
 
 from unities.routes import event_controler, home, login, users # noqa
 
+
 CORS(app)
