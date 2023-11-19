@@ -11,7 +11,6 @@ export default function Menu(){
             <div className="w-1/2 flex justify-center px-6">
                 <Link to="/" className="flex text-white hover:underline menu-button h-full p-5 text-lg place-items-center">Home</Link>
                 <Link to="/evenimente" className="flex text-white hover:underline menu-button h-full p-5 text-lg place-items-center">Evenimente</Link>
-                <Link to="/" className="flex text-white hover:underline menu-button h-full p-5 text-lg place-items-center">Calendar</Link>
             </div>
         </div>
     )

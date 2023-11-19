@@ -6,6 +6,13 @@ import React, { useState } from "react"
 
 interface ChildProps {
     onFilter: (filters: Filters) => void;
+    options: Options
+}
+
+export interface Options {
+    judete: string[],
+    categorii: string[],
+    facultati: string[]
 }
 
 export interface Filters {
@@ -14,14 +21,14 @@ export interface Filters {
     categorieFilter: string
 }
 
-export default function Search({ onFilter }: ChildProps) {
+export default function Search({ onFilter, options }: ChildProps) {
     const [judet, setJudet] = useState("");
     const [facultate, setFacultate] = useState("");
     const [categorii, setCategorii] = useState("");
 
     function handleFilterClick() {
-        if ((judet === "" && facultate === "" && categorii === "") 
-        || (judet === "Judet" && facultate === "Facultate" && categorii === "Categorii"))
+        if ((judet === "" && facultate === "" && categorii === "")
+            || (judet === "Judet" && facultate === "Facultate" && categorii === "Categorii"))
             return;
         onFilter({
             judetFilter: judet,
@@ -34,27 +41,21 @@ export default function Search({ onFilter }: ChildProps) {
         <div className=" items-center justify-center flex w-full h-28 shadow">
             <select onChange={(e) => setJudet(e.target.value)} className="selectL h-1/2 px-40 bg-white">
                 <option value="Judet">Judet</option>
-                <option value="Bucuresti">Bucuresti</option>
-                <option value="Timis">Timis</option>
-                <option value="Cluj">Cluj</option>
-                <option value="Iasi">Iasi</option>
-                <option value="Brasov">Brasov</option>
+                {options.judete.map(j => (
+                    <option key={options.judete.indexOf(j)} value={j}>{j}</option>
+                ))}
             </select>
             <select onChange={(e) => setFacultate(e.target.value)} className="selectM h-1/2 px-40 bg-white">
                 <option value="Facultate">Facultate</option>
-                <option value="UPB">UPB</option>
-                <option value="UPT">UPT</option>
-                <option value="ASE">ASE</option>
-                <option value="UB">UB</option>
-                <option value="FILS">FILS</option>
+                {options.facultati.map(j => (
+                    <option key={options.facultati.indexOf(j)} value={j}>{j}</option>
+                ))}
             </select>
             <select onChange={(e) => setCategorii(e.target.value)} className="selectR h-1/2 px-40 bg-white">
                 <option value="Categorie">Categorie</option>
-                <option value="Tehnologie">Tehnologie</option>
-                <option value="Agricultura">Agricultura</option>
-                <option value="Economie">Economie</option>
-                <option value="Transport">Transport</option>
-                <option value="Social">Social</option>
+                {options.categorii.map(j => (
+                    <option key={options.categorii.indexOf(j)} value={j}>{j}</option>
+                ))}
             </select>
             <button className="h-1/2">
                 <img onClick={handleFilterClick} src={SearchLogo} className="h-full p-3 bg-menu select-search" />
