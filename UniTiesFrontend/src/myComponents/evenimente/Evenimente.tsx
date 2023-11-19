@@ -77,11 +77,11 @@ export default function Evenimente() {
     };
 
     return (
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap justify-center w-full">
             <Search onFilter={setFilteredEvents} options={options} />
             <div className="flex flex-wrap w-2/3">
                 {events.map((event ) => (
-                    <EventThumbnail key={event._id} NAME={event.name} IMAGE={event.imageUrl} FACULTATE={event.organizer} />
+                    <EventThumbnail key={event._id} NAME={event.name} IMAGE={event.imageUrl} FACULTATE={event.organizer} URL={"/event/:" + event._id} />
                 ))}
             </div>
         </div>
