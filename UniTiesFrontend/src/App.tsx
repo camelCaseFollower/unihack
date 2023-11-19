@@ -5,6 +5,7 @@ import MainBody from "./myComponents/MainBody"
 import Evenimente from "./myComponents/evenimente/Evenimente"
 import Dashboard from "./myComponents/dashboard/Dashboard"
 import Login from "./myComponents/Login"
+import Footer from "./myComponents/Footer"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="dashboard" element={<Dashboard/>} />
       <Route path="login" element={<Login />} />
   </Routes>
+  <Footer />
 </>
   );
 }

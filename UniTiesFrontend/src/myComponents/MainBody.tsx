@@ -52,7 +52,6 @@ export default function MainBody() {
                     </div>
                     <ContactForm />
                 </div>{/*----- here body div ends -----*/}
-                <Footer />
             </div>{/*----- here mainScreen div ends -----*/}
         </>
     )
