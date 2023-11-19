@@ -39,26 +39,26 @@ export default function Search({ onFilter, options }: ChildProps) {
 
     return (
         <div className=" items-center justify-center flex w-full h-28 shadow">
-            <select onChange={(e) => setJudet(e.target.value)} className="selectL h-1/2 px-40 bg-white">
+            <select onChange={(e) => setJudet(e.target.value)} className="selectL h-1/3 px-40 bg-white">
                 <option value="Judet">Judet</option>
                 {options.judete.map(j => (
                     <option key={options.judete.indexOf(j)} value={j}>{j}</option>
                 ))}
             </select>
-            <select onChange={(e) => setFacultate(e.target.value)} className="selectM h-1/2 px-40 bg-white">
+            <select onChange={(e) => setFacultate(e.target.value)} className="selectM h-1/3 px-40 bg-white">
                 <option value="Facultate">Facultate</option>
                 {options.facultati.map(j => (
                     <option key={options.facultati.indexOf(j)} value={j}>{j}</option>
                 ))}
             </select>
-            <select onChange={(e) => setCategorii(e.target.value)} className="selectR h-1/2 px-40 bg-white">
+            <select onChange={(e) => setCategorii(e.target.value)} className="selectR h-1/3 px-40 bg-white">
                 <option value="Categorie">Categorie</option>
                 {options.categorii.map(j => (
                     <option key={options.categorii.indexOf(j)} value={j}>{j}</option>
                 ))}
             </select>
-            <button className="h-1/2">
-                <img onClick={handleFilterClick} src={SearchLogo} className="h-full p-3 bg-menu select-search" />
+            <button className="h-1/3">
+                <img onClick={handleFilterClick} src={SearchLogo} className="h-full p-2 bg-menu select-search" />
             </button>
         </div>
     )
