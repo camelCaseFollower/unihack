@@ -5,6 +5,7 @@ interface thumbnailProps{
     NAME: string,
     IMAGE: string,
     FACULTATE: string,
+    URL: string
 }
 
 export default function Thumbnail(props: thumbnailProps){
@@ -16,7 +17,7 @@ export default function Thumbnail(props: thumbnailProps){
             <div className="p-6 h-1/2">
                 <h2 className="font-bold">{props.NAME}</h2>
                 <p>Organizat de {props.FACULTATE}</p>
-                <Link to="/" className="underline text-blue-400 transition-all hover:translate-x-1">Detalii</Link>
+                <Link to={props.URL} className="underline text-blue-400 transition-all hover:translate-x-1">Detalii</Link>
             </div>
         </div>
     )

@@ -31,9 +31,9 @@ export default function MainBody() {
 
     return (
         <>
-            <div className="flex flex-wrap mainScreen h-screen w-full">
+            <div className="flex flex-wrap mainScreen w-full">
                 <div className="header flex w-full h-2/3 bg-header justify-center">
-                    <img src={Header} className="h-full"></img>
+                    <img src={Header} className="h-full w-1/2"></img>
                 </div> {/*----- here header div ends ----- */}
                 <div className="body flex flex-wrap w-full justify-center">
                     {imageEvents.length >= 4 && 
